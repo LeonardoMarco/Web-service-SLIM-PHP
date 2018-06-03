@@ -76,7 +76,7 @@ namespace controllers{
 				$sets[] = $key." = :".$key;
 			}
 
-			$sth = $this->PDO->prepare("UPDATE dono SET ".implode(',', $sets)." WHERE id = :id");
+			$sth = $this->PDO->prepare("UPDATE dono SET ".implode(',', $sets)." WHERE cod_dono = :id");
 			$sth ->bindValue(':id',$id);
 			foreach ($dados as $key => $value) {
 				$sth ->bindValue(':'.$key,$value);
